@@ -5,14 +5,14 @@ const hbs  = require('hbs');
 const port = process.env.PORT || 4000;
 
 
-const staticPath = path.join(__dirname,"../public")
+const staticPath = path.join(__dirname,"./public")
 app.use(express.static(staticPath))
 
-const templets_path = path.join(__dirname,"../templets/views")
+const templets_path = path.join(__dirname,"./templets/views")
 app.set('view engine','hbs');
 app.set('views',templets_path)
 
-const partial_path = path.join(__dirname,"../templets/partials")
+const partial_path = path.join(__dirname,"./templets/partials")
 hbs.registerPartials(partial_path)
 
 app.get('/', (req, res) => {
